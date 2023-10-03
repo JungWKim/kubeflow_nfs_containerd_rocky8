@@ -5,7 +5,8 @@ CURRENT_DIR=$PWD
 
 # install basic packages
 sudo yum update -y
-sudo yum install -y net-tools nfs-utils wget pciutils python3-pip
+sudo yum install -y net-tools nfs-utils wget pciutils python39
+sudo yum install -y python39-pip
 
 # disable ufw
 sudo systemctl stop firewalld
