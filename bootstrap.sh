@@ -31,7 +31,7 @@ ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
 cd ~
 git clone -b release-2.22 https://github.com/kubernetes-sigs/kubespray.git
 cd kubespray
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 echo "export PATH=${HOME}/.local/bin:${PATH}" | sudo tee ${HOME}/.bashrc > /dev/null
 export PATH=${HOME}/.local/bin:${PATH}
