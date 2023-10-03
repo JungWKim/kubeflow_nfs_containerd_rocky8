@@ -5,7 +5,7 @@ CURRENT_DIR=$PWD
 
 # install basic packages
 yum update -y
-yum install -y net-tools nfs-utils wget pciutils mkpasswd
+yum install -y net-tools nfs-utils wget pciutils python3-pip
 
 # disable ufw
 systemctl stop firewalld
