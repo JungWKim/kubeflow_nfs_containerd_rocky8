@@ -4,16 +4,16 @@ IP=
 CURRENT_DIR=$PWD
 
 # install basic packages
-yum update -y
-yum install -y net-tools nfs-utils wget pciutils python3-pip
+sudo yum update -y
+sudo yum install -y net-tools nfs-utils wget pciutils python3-pip
 
 # disable ufw
-systemctl stop firewalld
-systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
 
 #------------- Set SELinux in permissive mode (effectively disabling it)
-setenforce 0
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
 cat <<EOF | sudo tee -a /etc/sysctl.d/99-kubernetes-cri.conf
 net.bridge.bridge-nf-call-iptables  = 1
