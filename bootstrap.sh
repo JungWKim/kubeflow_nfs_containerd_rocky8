@@ -5,9 +5,11 @@ CURRENT_DIR=$PWD
 
 # install basic packages
 sudo yum update -y
-sudo yum install -y net-tools nfs-utils wget pciutils python39
-sudo yum install -y python39-pip
-pip3 install --user selinux
+sudo yum install -y net-tools nfs-utils wget pciutils epel-release
+#sudo yum instrall -y python39
+#sudo yum install -y python39-pip
+#pip3 install --user selinux
+#pip3 install selinux
 
 # disable ufw
 sudo systemctl stop firewalld
