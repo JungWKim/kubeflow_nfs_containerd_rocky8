@@ -36,6 +36,7 @@ cd Python-3.10.4
 ./configure --enable-optimizations
 make -j 2
 sudo make altinstall
+python3.10 -m pip install --upgrade pip
 
 # k8s installation via kubespray
 cd
