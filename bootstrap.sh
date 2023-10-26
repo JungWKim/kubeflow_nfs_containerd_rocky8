@@ -38,13 +38,14 @@ make -j 2
 sudo make altinstall
 echo "alias python3=python3.10" >> ${HOME}/.bashrc
 source ${HOME}/.bashrc
-python3.10 -m pip install --upgrade pip
+pip3 install selinux
+python3 -m pip install --upgrade pip
 
 # k8s installation via kubespray
 cd
 git clone -b release-2.22 https://github.com/kubernetes-sigs/kubespray.git
 cd kubespray
-pip3.10 install -r requirements.txt
+pip3 install -r requirements.txt
 
 echo "export PATH=${HOME}/.local/bin:${PATH}" | sudo tee ${HOME}/.bashrc > /dev/null
 export PATH=${HOME}/.local/bin:${PATH}
@@ -52,7 +53,7 @@ source ${HOME}/.bashrc
 
 cp -rfp inventory/sample inventory/mycluster
 declare -a IPS=(${IP})
-CONFIG_FILE=inventory/mycluster/hosts.yaml python3.10 contrib/inventory_builder/inventory.py ${IPS[@]}
+CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 
 # enable dashboard / disable dashboard login / change dashboard service as nodeport
 sed -i "s/# dashboard_enabled: false/dashboard_enabled: true/g" inventory/mycluster/group_vars/k8s_cluster/addons.yml
