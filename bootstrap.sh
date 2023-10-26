@@ -5,7 +5,7 @@ CURRENT_DIR=$PWD
 
 # install basic packages
 sudo yum update -y
-sudo yum install -y net-tools nfs-utils wget pciutils epel-release
+sudo yum install -y net-tools nfs-utils wget pciutils epel-release git
 
 # disable ufw
 sudo systemctl stop firewalld
