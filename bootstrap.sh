@@ -38,8 +38,8 @@ make -j 2
 sudo make altinstall
 echo "alias python3=python3.10" >> ${HOME}/.bashrc
 source ${HOME}/.bashrc
-pip3 install selinux
 python3 -m pip install --upgrade pip
+pip3 install selinux
 
 # k8s installation via kubespray
 cd
