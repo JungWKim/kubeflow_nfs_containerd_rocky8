@@ -28,10 +28,6 @@ ssh-keygen -t rsa
 ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
 
 # install python3.10
-echo "export PATH=/usr/local/bin:${PATH}" | sudo tee ${HOME}/.bashrc > /dev/null
-export PATH=/usr/local/bin:${PATH}
-source ~/.bashrc
-
 sudo dnf install -y curl gcc openssl-devel bzip2-devel libffi-devel zlib-devel tar wget make
 cd
 wget https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tar.xz
