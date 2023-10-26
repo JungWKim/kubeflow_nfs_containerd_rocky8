@@ -38,7 +38,7 @@ wget https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tar.xz
 tar -xf Python-3.10.4.tar.xz
 cd Python-3.10.4
 ./configure --enable-optimizations
-make -j 2 
+make -j 2
 sudo make altinstall
 
 # k8s installation via kubespray
