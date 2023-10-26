@@ -38,10 +38,10 @@ make -j 2
 sudo make altinstall
 
 # k8s installation via kubespray
-cd ~
+cd
 git clone -b release-2.22 https://github.com/kubernetes-sigs/kubespray.git
 cd kubespray
-pip3 install -r requirements.txt
+pip3.10 install -r requirements.txt
 
 echo "export PATH=${HOME}/.local/bin:${PATH}" | sudo tee ${HOME}/.bashrc > /dev/null
 export PATH=${HOME}/.local/bin:${PATH}
