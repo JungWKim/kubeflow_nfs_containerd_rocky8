@@ -12,8 +12,8 @@ sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 
 #------------- Set SELinux in permissive mode (effectively disabling it)
-#sudo setenforce 0
-#sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
 cat <<EOF | sudo tee -a /etc/sysctl.d/99-kubernetes-cri.conf
 net.bridge.bridge-nf-call-iptables  = 1
