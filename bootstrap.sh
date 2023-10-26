@@ -6,10 +6,6 @@ CURRENT_DIR=$PWD
 # install basic packages
 sudo yum update -y
 sudo yum install -y net-tools nfs-utils wget pciutils epel-release
-#sudo yum instrall -y python39
-#sudo yum install -y python39-pip
-#pip3 install --user selinux
-#pip3 install selinux
 
 # disable ufw
 sudo systemctl stop firewalld
@@ -30,6 +26,20 @@ sudo sysctl --system
 # ssh configuration
 ssh-keygen -t rsa
 ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
+
+# install python3.10
+echo "export PATH=/usr/local/bin:${PATH}" | sudo tee ${HOME}/.bashrc > /dev/null
+export PATH=/usr/local/bin:${PATH}
+source ~/.bashrc
+
+sudo dnf install -y curl gcc openssl-devel bzip2-devel libffi-devel zlib-devel tar wget make
+cd
+wget https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tar.xz
+tar -xf Python-3.10.4.tar.xz
+cd Python-3.10.4
+./configure --enable-optimizations
+make -j 2 
+sudo make altinstall
 
 # k8s installation via kubespray
 cd ~
