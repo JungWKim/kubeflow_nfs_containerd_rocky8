@@ -28,14 +28,7 @@ ssh-keygen -t rsa
 ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
 
 # install python3.10
-sudo dnf install -y curl gcc openssl-devel bzip2-devel libffi-devel zlib-devel tar wget make
-cd
-wget https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tar.xz
-tar -xf Python-3.10.4.tar.xz
-cd Python-3.10.4
-./configure --enable-optimizations
-make -j 2
-sudo make altinstall
+yum install -y python36
 echo "alias python3=python3.10" >> ${HOME}/.bashrc
 source ${HOME}/.bashrc
 python3 -m pip install --upgrade pip
