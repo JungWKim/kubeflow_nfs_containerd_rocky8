@@ -29,7 +29,7 @@ ssh-keygen -t rsa
 ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
 
 # install python3
-sudo yum install -y python3.11
+sudo yum install -y python3.11 python3.11-pip
 #python3 -m pip install --upgrade pip
 python3 -m pip install selinux
 
