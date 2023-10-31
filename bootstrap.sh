@@ -6,7 +6,7 @@ CURRENT_DIR=$PWD
 # install basic packages
 sudo yum update -y
 sudo yum install -y epel-release
-sudo yum install -y net-tools nfs-utils wget pciutils git libselinux-devel
+sudo yum install -y net-tools nfs-utils wget pciutils git
 
 # disable ufw
 sudo systemctl stop firewalld
