@@ -30,14 +30,14 @@ ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
 
 # install python3
 sudo yum install -y python39
-#python3 -m pip install --upgrade pip
-#python3 -m pip install selinux
+python3 -m pip install --upgrade pip
+python3 -m pip install selinux
 
 # k8s installation via kubespray
 cd
 git clone -b release-2.22 https://github.com/kubernetes-sigs/kubespray.git
 cd kubespray
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 
 echo "export PATH=${HOME}/.local/bin:${PATH}" | sudo tee ${HOME}/.bashrc > /dev/null
 export PATH=${HOME}/.local/bin:${PATH}
