@@ -5,7 +5,8 @@ CURRENT_DIR=$PWD
 
 # install basic packages
 sudo yum update -y
-sudo yum install -y net-tools nfs-utils wget pciutils epel-release git
+sudo yum install -y epel-release
+sudo yum install -y net-tools nfs-utils wget pciutils git libselinux-devel
 
 # disable ufw
 sudo systemctl stop firewalld
@@ -28,9 +29,9 @@ ssh-keygen -t rsa
 ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
 
 # install python3
-yum install -y python36
-python3 -m pip install --upgrade pip
-python3 -m pip install selinux
+yum install -y python39
+#python3 -m pip install --upgrade pip
+#python3 -m pip install selinux
 
 # k8s installation via kubespray
 cd
