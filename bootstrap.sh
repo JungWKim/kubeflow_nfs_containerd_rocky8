@@ -32,6 +32,7 @@ ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
 sudo yum install -y python3.11 python3.11-pip
 python3 -m pip install --upgrade pip
 python3 -m pip install selinux
+sudo python3 -m pip install selinux
 
 # k8s installation via kubespray
 cd
