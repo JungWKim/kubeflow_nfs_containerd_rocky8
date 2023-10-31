@@ -27,13 +27,10 @@ sudo sysctl --system
 ssh-keygen -t rsa
 ssh-copy-id -i ~/.ssh/id_rsa ${USER}@${IP}
 
-# install python3.10
+# install python3
 yum install -y python36
-echo "alias python3=python3.10" >> ${HOME}/.bashrc
-source ${HOME}/.bashrc
 python3 -m pip install --upgrade pip
-pip3 install selinux
-sudo ln -s /usr/local/bin/python3.10 /usr/bin/python3.10
+python3 -m pip install selinux
 
 # k8s installation via kubespray
 cd
