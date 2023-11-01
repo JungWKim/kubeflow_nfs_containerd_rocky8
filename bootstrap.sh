@@ -41,7 +41,7 @@ cd kubespray
 pip3 install -r requirements.txt
 
 echo "export PATH=${HOME}/.local/bin:${PATH}" | sudo tee ${HOME}/.bashrc > /dev/null
-echo "export PATH=/usr/local/bin:${PATH}" | sudo tee /root/.bashrc > /dev/null
+echo "export PATH=/usr/local/bin:${PATH}" | sudo tee -a /root/.bashrc > /dev/null
 export PATH=${HOME}/.local/bin:${PATH}
 source ${HOME}/.bashrc
 
