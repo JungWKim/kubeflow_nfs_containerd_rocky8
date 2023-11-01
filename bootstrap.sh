@@ -81,7 +81,7 @@ source ${HOME}/.bashrc
 # enable kubectl in admin account and root
 mkdir -p ${HOME}/.kube
 cp -i /etc/kubernetes/admin.conf ${HOME}/.kube/config
-chown ${USER}:${USER} ${HOME}/.kube/config
+sudo chown ${USER}:${USER} ${HOME}/.kube/config
 
 # create sa and clusterrolebinding of dashboard to get cluster-admin token
 kubectl apply -f ${CURRENT_DIR}/sa.yaml
