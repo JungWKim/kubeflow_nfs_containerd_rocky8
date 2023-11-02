@@ -19,3 +19,10 @@ net.bridge.bridge-nf-call-ip6tables = 1
 EOF
 
 sysctl --system
+
+# download nerdctl zip file
+cd ${HOME}
+wget https://github.com/containerd/nerdctl/releases/download/v1.6.2/nerdctl-full-1.6.2-linux-amd64.tar.gz
+
+# install nerdctl
+sudo tar Cxzvvf /usr nerdctl-full-1.6.2-linux-amd64.tar.gz
