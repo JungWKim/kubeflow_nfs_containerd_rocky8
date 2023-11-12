@@ -34,8 +34,10 @@ EOF
 #sed -i "s/true/false/g" ~/manifests/apps/volumes-web-app/upstream/base/params.env
 #sed -i "s/true/false/g" ~/manifests/apps/tensorboard/tensorboards-web-app/upstream/base/params.env
 
-# 
-sed -i "" ~/manifests/common/istio-1-16/istio-install/base/install.yaml
+# enable istio_cni
+sed -i "1545s/: false/: true/g" ~/manifests/common/istio-1-16/istio-install/base/install.yaml
+sed -i "1673s/: false/: true/g" ~/manifests/common/istio-1-17/istio-install/base/install.yaml
+sed -i "1786s/: false/: true/g" ~/manifests/common/istio-cni-1-17/istio-install/base/install.yaml
 
 # change service as nodeport
 sed -i "s/ClusterIP/NodePort/g" ~/manifests/common/dex/base/service.yaml
