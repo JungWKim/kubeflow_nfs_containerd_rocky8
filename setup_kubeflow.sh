@@ -11,7 +11,7 @@ CURRENT_DIR=$PWD
 
 # download kubeflow manifest repository
 cd ~
-git clone https://github.com/kubeflow/manifests.git -b v1.7-branch
+git clone https://github.com/kubeflow/manifests.git -b v1.8-branch
 
 # enable kubeflow to be accessed through https (1)
 cat << EOF >> ~/manifests/common/istio-1-16/kubeflow-istio-resources/base/kf-istio-resources.yaml
