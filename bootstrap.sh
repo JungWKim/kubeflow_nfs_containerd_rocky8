@@ -36,7 +36,7 @@ sudo python3 -m pip install selinux
 
 # k8s installation via kubespray
 cd
-git clone -b release-2.20 https://github.com/kubernetes-sigs/kubespray.git
+git clone -b release-2.22 https://github.com/kubernetes-sigs/kubespray.git
 cd kubespray
 pip3 install -r requirements.txt
 
