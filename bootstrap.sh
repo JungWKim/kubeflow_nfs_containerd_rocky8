@@ -56,6 +56,8 @@ sed -i "14,24s/^/#/g" roles/kubernetes/preinstall/tasks/0080-system-configuratio
 sed -i "s/kube_proxy_mode: ipvs/kube_proxy_mode: iptables/g" roles/kubespray-defaults/defaults/main.yaml
 sed -i "s/kube_proxy_mode: ipvs/kube_proxy_mode: iptables/g" inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml
 
+sed -i "s/# calico_iptables_backend: "Auto"/calico_iptables_backend: "Auto"/g" inventory/sample/group_vars/k8s_cluster/k8s-net-calico.yml
+
 # enable dashboard / disable dashboard login / change dashboard service as nodeport
 sed -i "s/# dashboard_enabled: false/dashboard_enabled: true/g" inventory/mycluster/group_vars/k8s_cluster/addons.yml
 sed -i "s/dashboard_skip_login: false/dashboard_skip_login: true/g" roles/kubernetes-apps/ansible/defaults/main.yml
