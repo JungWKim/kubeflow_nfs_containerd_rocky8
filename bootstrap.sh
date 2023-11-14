@@ -22,6 +22,16 @@ net.ipv4.ip_forward                 = 1
 net.bridge.bridge-nf-call-ip6tables = 1
 EOF
 
+cat <<EOF | sudo tee -a /etc/modules-load.d/istio-iptables.conf
+br_netfilter
+nf_nat
+xt_REDIRECT
+xt_owner
+iptable_nat
+iptable_mangle
+iptable_filter
+EOF
+
 sudo sysctl --system
 
 # ssh configuration
